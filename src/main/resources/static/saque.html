@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Saque</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none !important;
+}
+</style>
+</head>
+
+<body ng-app="main" ng-cloak class="ng-cloak">
+	<div ng-controller="SaqueController" class="container" ng-init="init()">
+		<div ng-show="login" class="centerd">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form role="form" ng-submit="entrar(usuario)">
+						<div class="form-group">
+							<label for="username">Usuário</label> <input type="text"
+								class="form-control" name="usuario" ng-model="usuario" />
+						</div>
+						<button type="submit" class="btn btn-primary">Entrar</button>
+					</form>
+				</div>
+				<div class="alert alert-info" role="alert" ng-show="alertaLogin">
+					{{loginMsg}}</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="modal fade" id="saqueModal" tabindex="-1" role="dialog"
+			aria-labelledby="saqueModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h3 class="modal-title" id="titulo">
+							<p class="text-center">Olá {{saqueId.nome}} </p>
+						</h3>
+					</div>
+					<div class="modal-body">
+						<p>Você possui disponivel para Saque: <strong>{{saqueId.valor}}.00</strong></p>
+						  <div class="form-group">
+						    <label class="sr-only" for="exampleInputAmount">Valor</label>
+						    <div class="input-group">
+						      <div class="input-group-addon">R$</div>
+						      <input type="text" class="form-control" ng-model="valorSaque" placeholder="Valor">
+						      <div class="input-group-addon">.00</div>
+						    </div>
+						  </div>
+
+					
+					
+					
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary"ng-click="realizarSaque(valorSaque,saqueId.valor,saqueId.id)">Realizar Saque</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="limpa(saqueId.usuario)">Fechar</button>
+					<br> <br>	
+						<div ng-show="alertaSaque" class="alert alert-warning">
+						<div class="row">
+						<div class="col-md-3">
+							<p class="text-left">
+							<strong>{{saque.notas10}}</strong>
+							</p>
+							</div>
+							
+							<div class="col-md-3">
+							<p class="text-left">
+							<strong>{{saque.notas20}}</strong>
+							</p>
+							</div>
+							
+							<div class="col-md-3">
+							<p class="text-left">
+							<strong>{{saque.notas50}}</strong>
+							</p>
+							</div>
+							
+							<div class="col-md-3">
+							<p class="text-left">
+							<strong>{{saque.notas100}}</strong>
+							</p>
+							</div>
+
+							</div>
+						</div>
+						<div ng-show="saqueNegado" class="alert alert-warning">
+						<p class="text-left">
+							<strong>{{saqueNegativa}}</strong>
+							</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="js/lib/jquery-3.2.1.min.js"></script>
+		<script src="js/lib/bootstrap.min.js"></script>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/lib/ngMask.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/saque-controller.js"></script>
+</body>
+</html>
