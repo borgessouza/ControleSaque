@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html ng-app="main">
+<head>
+	<title>Bem Vindo ao Sistema</title>
+	<meta charset="UTF-8" />
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="css/login.css" rel="stylesheet"/>
+</head>
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+display: none !important;
+}
+</style>
+
+
+<body class="text-center" ng-controller="UsuarioController" ng-init="init()">
+<form action="/login" method="post" class="form-signin">
+	<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+	<input type="text" id="username" name="username" class="form-control" placeholder="User" required="" autofocus="">
+	<input type="password" id="password" name="password" class="form-control" placeholder="Senha" required="">
+	<div class="checkbox mb-3">
+		<label>
+			<input type="checkbox" value="remember-me"> Remember me
+		</label>
+	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+</form>
+
+<script src="js/lib/jquery-3.2.1.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/angular.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/usuario-controller.js"></script>
+
+</body>
+
+
+</htmli>

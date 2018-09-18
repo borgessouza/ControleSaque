@@ -1,8 +1,9 @@
-package br.com.ks.saques.controllers;
+package br.com.ks.saques.controllers.rest;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import br.com.ks.saques.DTO.ClienteDTO;
+import br.com.ks.saques.DTO.SaqueDTO;
+import br.com.ks.saques.service.ClienteService;
+import br.com.ks.saques.service.SaqueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.ks.saques.DTO.ClienteDTO;
-import br.com.ks.saques.DTO.SaqueDTO;
-import br.com.ks.saques.service.ClienteService;
-import br.com.ks.saques.service.SaqueService;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class SaqueController {
@@ -29,7 +28,7 @@ public class SaqueController {
 	
 	private static List<String> logados = new ArrayList<String>(); 
 
-	@RequestMapping(value = "login", method = RequestMethod.GET)
+	@RequestMapping(value = "login2", method = RequestMethod.GET)
 	public ResponseEntity<ClienteDTO> login(@RequestParam("id") String usuario) {
 
 		ClienteDTO clienteDTO = clienteService.encontrarCliente(usuario);

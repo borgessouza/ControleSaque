@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Saque</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
 [ng\:cloak], [ng-cloak], .ng-cloak {
 	display: none !important;
@@ -13,6 +13,7 @@
 
 <body ng-app="main" ng-cloak class="ng-cloak">
 	<div ng-controller="SaqueController" class="container" ng-init="init()">
+		<menu-details></menu-details>
 		<div ng-show="login" class="centerd">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -104,11 +105,11 @@
 		</div>
 
 
-		<script src="js/lib/jquery-3.2.1.min.js"></script>
-		<script src="js/lib/bootstrap.min.js"></script>
-		<script src="js/lib/angular.min.js"></script>
-		<script src="js/lib/ngMask.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/saque-controller.js"></script>
+		<script src="../js/lib/jquery-3.2.1.min.js"></script>
+		<script src="../js/lib/bootstrap.min.js"></script>
+		<script src="../js/lib/angular.min.js"></script>
+		<script src="../js/lib/ngMask.js"></script>
+		<script src="../js/main.js"></script>
+		<script src="../js/saque-controller.js"></script>
 </body>
 </html>
